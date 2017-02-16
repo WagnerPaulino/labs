@@ -10,8 +10,8 @@ public class Inverter {
 	}
 
 	public String findAfter(String url) {
-		String str = null;
-		String str2 = null;
+		String str = "";
+		String str2 = "";
 		int ig = 0;
 		int tam = url.length();
 		for (int i = 0; i < tam; i++) {
@@ -27,8 +27,8 @@ public class Inverter {
 	}
 
 	public String findBefore(String url) {
-		String str = null;
-		String str2 = null;
+		String str = "";
+		String str2 = "";
 		int ig = 0;
 		int tam = url.length();
 		for (int i = 0; i < tam; i++) {
