@@ -1,12 +1,6 @@
 package invert;
 
-import java.time.format.ResolverStyle;
-import java.util.ArrayList;
-import java.util.List;
-
 public class Inverter {
-	List link1 = new ArrayList();
-	List link2 = new ArrayList();
 
 	public String inverter(String url) {
 		if (url == null || url.length() <= 1) {
