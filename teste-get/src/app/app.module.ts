@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material'
 import { CovalentCoreModule, CovalentLayoutModule, CovalentDataTableModule } from '@covalent/core'
 import { RouterModule, Routes } from '@angular/router';
+import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
 
 import { AppComponent } from './app.component';
 import { PessoaComponent } from './pessoa/pessoa.component';
@@ -28,7 +29,8 @@ import { AppRoutingModule } from "./app-routing.module";
     CovalentCoreModule.forRoot(),
     CovalentLayoutModule.forRoot(),
     CovalentDataTableModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    CovalentDynamicFormsModule.forRoot()
   ],
   providers: [PessoaService, AppRoutingModule ],
   bootstrap: [AppComponent]

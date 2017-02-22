@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Pessoa } from 'app/domain/pessoa';
 import { PessoaService } from 'app/service/pessoa.service';
-import { ITdDataTableColumn } from '@covalent/core'
+import { ITdDataTableColumn } from '@covalent/core';
+import { ITdDynamicElementConfig, TdDynamicElement, TdDynamicType } from '@covalent/dynamic-forms';
 
 @Component({
   selector: 'app-pessoa-list',
@@ -33,4 +34,17 @@ export class PessoaEditComponent implements OnInit {
         });
     }
   }
+
+elements: ITdDynamicElementConfig[] = [{
+    name: 'nome',
+    type: TdDynamicElement.Input,
+    required: false
+  },
+  {
+    name: 'tipo',
+    type: TdDynamicElement.Input,
+    required: false
+  }
+];
+
 }
