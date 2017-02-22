@@ -1,0 +1,11 @@
+<p>pessoa works!</p>
+<table td-data-table >
+  <th td-data-table-column
+      *ngFor="let column of columns"
+      [numeric]="column.numeric">
+    {{column.label}}
+  </th>
+  <tr td-data-table-row *ngFor="let row of pessoas">
+  	<td td-data-table-cell *ngFor="let column of columns">{{row[column.name]}}</td>
+  </tr>
+</table>
