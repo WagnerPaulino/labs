@@ -1,3 +1,21 @@
 <br/>
-<td-dynamic-forms [elements]="elements">
-</td-dynamic-forms>
+<!--<td-dynamic-forms [elements]="elements">
+
+    <button md-mini-fab color="accent" (click)="()">
+  <md-icon>add</md-icon>
+</button> 
+</td-dynamic-forms>-->
+
+<form *ngIf="pessoas" (ngSubmit)="addPessoa(pessoaForm.value)" #pessoaForm="ngForm">
+<div layout="row" layout-margin>
+    <md-input-container flex>
+      <input md-input placeholder="Nome:" [(ngModel)]="pessoas.nome" name="nome" #nome="ngModel">
+    </md-input-container>
+    <md-input-container flex>
+      <input md-input placeholder="Tipo:" [(ngModel)]="pessoas.tipo" name="tipo" #tipo="ngModel">
+    </md-input-container>
+  </div>
+    <button md-mini-fab color="accent" (click)="addPessoa(pessoaForm.value)">
+        <md-icon>add</md-icon>
+    </button>
+  </form>

@@ -22,6 +22,10 @@ export class PessoaEditComponent implements OnInit {
       .subscribe(data => this.pessoas = data);
   }
 
+  addPessoa(pessoa){
+    this.pessoaService.addPessoa(pessoa).subscribe(data => this.pessoas = data);
+  }
+
   deletePessoa(pessoa) {
     if (confirm("Você quer deletar " + pessoa.nome + "?")) {
       var index = this.pessoas.indexOf(pessoa);
@@ -35,7 +39,7 @@ export class PessoaEditComponent implements OnInit {
     }
   }
 
-elements: ITdDynamicElementConfig[] = [{
+/*elements: ITdDynamicElementConfig[] = [{
     name: 'nome',
     type: TdDynamicElement.Input,
     required: false
@@ -45,6 +49,6 @@ elements: ITdDynamicElementConfig[] = [{
     type: TdDynamicElement.Input,
     required: false
   }
-];
+];*/
 
 }
