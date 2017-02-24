@@ -6,16 +6,16 @@
 </button> 
 </td-dynamic-forms>-->
 
-<form *ngIf="pessoas" (ngSubmit)="addPessoa(pessoaForm.value)" #pessoaForm="ngForm">
+<form #pessoaForm="ngForm" (ngSubmit)="save(pessoaForm)" novalidate>
 <div layout="row" layout-margin>
-    <md-input-container flex>
-      <input md-input placeholder="Nome:" [(ngModel)]="pessoas.nome" name="nome" #nome="ngModel">
+    <md-input-container flex >
+      <input md-input placeholder="Nome:" [(ngModel)]="pessoa.nome" name="nome" required >
     </md-input-container>
-    <md-input-container flex>
-      <input md-input placeholder="Tipo:" [(ngModel)]="pessoas.tipo" name="tipo" #tipo="ngModel">
+    <md-input-container flex >
+      <input md-input placeholder="Tipo:" [(ngModel)]="pessoa.tipo" name="tipo" >
     </md-input-container>
-  </div>
-    <button md-mini-fab color="accent" (click)="addPessoa(pessoaForm.value)">
+   <button md-mini-fab color="accent" type="submit" [disabled]="!pessoaForm.valid">
         <md-icon>add</md-icon>
     </button>
+  </div>
   </form>

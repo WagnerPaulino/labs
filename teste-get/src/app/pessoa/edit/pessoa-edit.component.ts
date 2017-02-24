@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Pessoa } from 'app/domain/pessoa';
 import { PessoaService } from 'app/service/pessoa.service';
 import { ITdDataTableColumn } from '@covalent/core';
+import { NgForm } from '@angular/forms';
 import { ITdDynamicElementConfig, TdDynamicElement, TdDynamicType } from '@covalent/dynamic-forms';
 
 @Component({
@@ -11,32 +12,25 @@ import { ITdDynamicElementConfig, TdDynamicElement, TdDynamicType } from '@coval
 })
 export class PessoaEditComponent implements OnInit {
 
-  private pessoas: Pessoa[] = [];
+  private pessoa: Pessoa = new Pessoa();
 
   ngOnInit() {
 
   }
 
   constructor(private pessoaService: PessoaService) {
-    this.pessoaService.getPessoas()
-      .subscribe(data => this.pessoas = data);
+    //this.pessoaService.getPessoas();
+     // .subscribe(data => this.pessoa = data);
   }
 
-  addPessoa(pessoa){
-    this.pessoaService.addPessoa(pessoa).subscribe(data => this.pessoas = data);
+  save(form: NgForm){
+    //this.pessoaService.addPessoa(pessoa).subscribe(data => this.pessoa = data);
+    console.log(form.value);
+    console.log(this.pessoa);
   }
 
   deletePessoa(pessoa) {
-    if (confirm("Você quer deletar " + pessoa.nome + "?")) {
-      var index = this.pessoas.indexOf(pessoa);
-      this.pessoas.splice(index, 1);
-
-      this.pessoaService.deletePessoa(pessoa.id)
-        .subscribe(null, err => {
-          alert("Não foi possivel deletar");
-          this.pessoas.splice(index, 0, pessoa);
-        });
-    }
+      this.pessoaService.deletePessoa(pessoa.id);
   }
 
 /*elements: ITdDynamicElementConfig[] = [{

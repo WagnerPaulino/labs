@@ -5,6 +5,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs/Rx';
+import { Pessoa } from 'app/domain/pessoa';
 
 @Injectable()
 export class PessoaService {
@@ -22,12 +23,12 @@ export class PessoaService {
         .map(res => res.json());
     }
 
-    addPessoa(pessoas){
-      return this.http.post(this.url, JSON.stringify(pessoas))
+    addPessoa(pessoa: Pessoa){
+      return this.http.post(this.url, JSON.stringify(pessoa))
         .map(res => res.json());
     }
 
-    updatePessoa(pessoa){
+    updatePessoa(pessoa: Pessoa){
       return this.http.put(this.getPessoaUrl(pessoa.id), JSON.stringify(pessoa))
         .map(res => res.json());
     }
