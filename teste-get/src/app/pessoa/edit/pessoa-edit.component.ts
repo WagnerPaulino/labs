@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Pessoa } from 'app/domain/pessoa';
 import { PessoaService } from 'app/service/pessoa.service';
 import { ITdDataTableColumn } from '@covalent/core';
-import { NgForm } from '@angular/forms';
+import { NgForm, Validators, FormBuilder, FormControl } from '@angular/forms';
 import { ITdDynamicElementConfig, TdDynamicElement, TdDynamicType } from '@covalent/dynamic-forms';
 
 @Component({
