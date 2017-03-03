@@ -25,25 +25,30 @@ export class PessoaService {
     }
 
     addPessoa(pessoa: Pessoa): Observable<Pessoa>{
-      //console.log('executando service');
-      //console.log(pessoa);
-
+      let bodyString = JSON.stringify(pessoa);
       let headers = new Headers({ 'Content-Type': 'application/json' });
       let options = new RequestOptions({ headers: headers });
+      console.log('executando service');
+      console.log(pessoa);
 
-      return this.http.post(this.url, { pessoa }, options)
-      .map(this.extractData)
-      .catch(this.handleError);
+      return this.http.post(this.url, pessoa , options)
+      .map(res => res.json())
+      .catch((error:any)=> Observable.throw(error.json().error || 'Server error'));
     }
 
     updatePessoa(pessoa: Pessoa){
-      return this.http.put(this.getPessoaUrl(pessoa.id), JSON.stringify(pessoa))
-        .map(res => res.json());
+      let bodyString = JSON.stringify(pessoa);
+      let headers = new Headers({ 'Content-Type': 'application/json' });
+      let options = new RequestOptions({ headers: headers });
+      return this.http.put(this.getPessoaUrl(pessoa.id), pessoa, options)
+        .map(res => res.json())
+        .catch((error:any)=> Observable.throw(error.json().error || 'Server error'));
     }
 
     deletePessoa(id){
       return this.http.delete(this.getPessoaUrl(id))
-        .map(res => res.json());
+        .map(res => res.json())
+        .catch((error:any)=> Observable.throw(error.json().error || 'Server error'));
     }
 
     private getPessoaUrl(id){
