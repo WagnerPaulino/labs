@@ -25,10 +25,14 @@ export class PessoaEditComponent implements OnInit {
 
   save(form: NgForm){
     
-    
+    if(form.value.id == null){
     this.pessoaService.addPessoa(this.pessoa).subscribe(form.value);
-    
-    console.log(form.value);
+    console.log("executando insert");
+  }else{
+  this.pessoaService.updatePessoa(this.pessoa).subscribe(form.value);
+    console.log("executando update");
+  }
+  console.log(form.value);
     console.log(this.pessoa);
   }
 
