@@ -36,7 +36,7 @@ export class PessoaService {
       .catch((error:any)=> Observable.throw(error.json().error || 'Server error'));
     }
 
-    updatePessoa(pessoa: Pessoa){
+    updatePessoa(pessoa: Pessoa): Observable<Pessoa>{
       let bodyString = JSON.stringify(pessoa);
       let headers = new Headers({ 'Content-Type': 'application/json' });
       let options = new RequestOptions({ headers: headers });
@@ -45,7 +45,7 @@ export class PessoaService {
         .catch((error:any)=> Observable.throw(error.json().error || 'Server error'));
     }
 
-    deletePessoa(id){
+    deletePessoa(id): Observable<Pessoa>{
       let bodyString = JSON.stringify(id);
       let headers = new Headers({ 'Content-Type': 'application/json' });
       let options = new RequestOptions({ headers: headers });
