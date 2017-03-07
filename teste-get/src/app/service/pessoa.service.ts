@@ -19,9 +19,13 @@ export class PessoaService {
         .map(res => res.json());
     }
 
-    getPessoa(id){
-      return this.http.get(this.getPessoaUrl(id))
-        .map(res => res.json());
+    getPessoa(id): Observable<Pessoa>{
+       let bodyString = JSON.stringify(id);
+      let headers = new Headers({ 'Content-Type': 'application/json' });
+      let options = new RequestOptions({ headers: headers });
+      return this.http.get(this.getPessoaUrl(id), options)
+        .map(res => res.json())
+        .catch((error:any)=> Observable.throw(error.json().error || 'Server error'));
     }
 
     addPessoa(pessoa: Pessoa): Observable<Pessoa>{
