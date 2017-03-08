@@ -8,6 +8,7 @@ const appRoutes: Routes = [//definição de redirects
 { path: 'pessoa-list', component: PessoaListComponent },
 { path: 'pessoa-edit', component: PessoaEditComponent },
 { path: 'pessoa-list/pessoa-edit/:id', component: PessoaEditComponent },
+{ path: 'pessoa-list/pessoa-list/:id', component: PessoaListComponent },
 { path: '',
   redirectTo: '/',
   pathMatch: 'full'
