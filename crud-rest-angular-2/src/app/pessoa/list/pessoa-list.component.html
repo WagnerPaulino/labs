@@ -10,7 +10,6 @@
     </td>
     <button md-button class="text-upper" 
     [routerLink]="['pessoa-edit', row.id]" routerLinkActive="active">Editar</button>
-    <button md-button class="text-upper"  
-    [routerLink]="['pessoa-list', row.id]" routerLinkActive="active">Excluir</button>
+    <button md-button class="text-upper" (click)="delete(row.id)" >Excluir</button>
   </tr>
 </table>

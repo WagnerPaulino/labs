@@ -39,6 +39,7 @@ export class PessoaEditComponent implements OnInit, OnDestroy {
   }
   console.log(form.value);
     console.log(this.pessoa);
+    this.pessoa = new Pessoa();
   }
 
   deletePessoa(pessoa) {
