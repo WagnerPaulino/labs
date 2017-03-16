@@ -1,10 +1,11 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { EditarPage } from '../pages/edit/editar';
-import { ListaPage } from '../pages/list/lista';
-import { HomePage } from '../pages/home/home';
-import { TabsPage } from '../pages/tabs/tabs';
+import { EditarPage } from "../pessoa/pages/edit/editar";
+import { ListaPage } from "../pessoa/pages/list/lista";
+import { HomePage } from "../pessoa/pages/home/home";
+import { TabsPage } from "../pessoa/pages/tabs/tabs";
+
 
 @NgModule({
   declarations: [
