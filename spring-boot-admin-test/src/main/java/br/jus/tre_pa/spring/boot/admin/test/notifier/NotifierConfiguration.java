@@ -15,7 +15,7 @@ import de.codecentric.boot.admin.notify.RemindingNotifier;
 @Configuration
 @EnableScheduling
 public class NotifierConfiguration {
-    @Autowired
+   /* @Autowired
     private Notifier notifier;
 
     @Bean
@@ -29,5 +29,5 @@ public class NotifierConfiguration {
     @Scheduled(fixedRate = 60_000L) 
     public void remind() {
         remindingNotifier().sendReminders();
-    }
+    }*/
 }
