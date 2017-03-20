@@ -9,12 +9,13 @@
 <ion-content padding>
  <form #pessoaForm="ngForm" (ngSubmit)="save(pessoaForm)">
   <ion-item>
-    <ion-label [(ngModel)]="pessoa.nome" name="nome">Nome</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-label>Nome</ion-label>
+    <ion-input type="text" [(ngModel)]="pessoa.nome" name="nome"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label [(ngModel)]="pessoa.tipo" name="tipo">tipo</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-label>tipo</ion-label>
+    <ion-input type="text" [(ngModel)]="pessoa.tipo" name="tipo"></ion-input>
   </ion-item>
+  <button ion-button type="submit">Salvar</button>
  </form>
 </ion-content>
