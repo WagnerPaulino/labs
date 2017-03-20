@@ -10,7 +10,8 @@ import { CovalentCoreModule, CovalentLayoutModule } from '@covalent/core';
 import { MngtModule } from './view/mngt/mngt.module';
 import { SysModule } from './view/sys/sys.module';
 import { UserModule } from './view/user/user.module';
-import { MessageService } from 'app/service/message.service';
+import { MessageService } from "./service/message.service";
+
 
 @NgModule({
   declarations: [

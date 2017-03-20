@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TdDataTableService, TdDataTableSortingOrder, ITdDataTableSortChangeEvent, ITdDataTableColumn } from '@covalent/core';
 import { IPageChangeEvent } from '@covalent/core';
-import { MessageService } from 'app/service/message.service';
+import { MessageService } from "../../../service/message.service";
 
 @Component({
   selector: 'mngt-dashboard',
