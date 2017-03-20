@@ -7,5 +7,14 @@
 </ion-header>
 
 <ion-content padding>
-
+ <form #pessoaForm="ngForm" (ngSubmit)="save(pessoaForm)">
+  <ion-item>
+    <ion-label [(ngModel)]="pessoa.nome" name="nome">Nome</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label [(ngModel)]="pessoa.tipo" name="tipo">tipo</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+ </form>
 </ion-content>

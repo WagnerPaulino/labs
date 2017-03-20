@@ -5,6 +5,7 @@ import { EditarPage } from "../pessoa/pages/edit/editar";
 import { ListaPage } from "../pessoa/pages/list/lista";
 import { HomePage } from "../pessoa/pages/home/home";
 import { TabsPage } from "../pessoa/pages/tabs/tabs";
+import { PessoaService } from "../services/pessoaService";
 
 
 @NgModule({
@@ -26,6 +27,6 @@ import { TabsPage } from "../pessoa/pages/tabs/tabs";
     HomePage,
     TabsPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [ PessoaService, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}
