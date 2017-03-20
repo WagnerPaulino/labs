@@ -20,7 +20,6 @@ export class PessoaService {
     }
 
     getPessoa(id): Observable<Pessoa>{
-       let bodyString = JSON.stringify(id);
       let headers = new Headers({ 'Content-Type': 'application/json' });
       let options = new RequestOptions({ headers: headers });
       return this.http.get(this.getPessoaUrl(id), options)
@@ -35,7 +34,7 @@ export class PessoaService {
       console.log('executando service');
       console.log(pessoa);
 
-      return this.http.post(this.url, pessoa , options)
+      return this.http.post(this.url, bodyString , options)
       .map(res => res.json())
       .catch((error:any)=> Observable.throw(error.json().error || 'Server error'));
     }
@@ -44,13 +43,12 @@ export class PessoaService {
       let bodyString = JSON.stringify(pessoa);
       let headers = new Headers({ 'Content-Type': 'application/json' });
       let options = new RequestOptions({ headers: headers });
-      return this.http.put(this.getPessoaUrl(pessoa.id), pessoa, options)
+      return this.http.put(this.getPessoaUrl(pessoa.id), bodyString, options)
         .map(res => res.json())
         .catch((error:any)=> Observable.throw(error.json().error || 'Server error'));
     }
 
     deletePessoa(id): Observable<Pessoa>{
-      let bodyString = JSON.stringify(id);
       let headers = new Headers({ 'Content-Type': 'application/json' });
       let options = new RequestOptions({ headers: headers });
       return this.http.delete(this.getPessoaUrl(id), options)
@@ -60,23 +58,5 @@ export class PessoaService {
 
     private getPessoaUrl(id){
       return this.url + "/" + id;
-    }
-
-    private extractData(res: Response) {
-      let body = res.json();
-      return body.data || { };
-    }
-    private handleError (error: Response | any) {
-    
-      let errMsg: string;
-      if (error instanceof Response) {
-      const body = error.json() || '';
-      const err = body.error || JSON.stringify(body);
-      errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
-      } else {
-      errMsg = error.message ? error.message : error.toString();
-      }
-      console.error(errMsg);
-      return Promise.reject(errMsg);
     }
   }
