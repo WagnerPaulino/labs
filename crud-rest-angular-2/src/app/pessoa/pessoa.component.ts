@@ -13,10 +13,7 @@ export class PessoaComponent implements OnInit {
   private pessoas: Pessoa[] = [];
 
 
-  constructor(private pessoaService: PessoaService) {
-    this.pessoaService.getPessoas()
-      .subscribe(data => this.pessoas = data);
-  }
+  constructor(private pessoaService: PessoaService) {  }
 
   ngOnInit() {
 
