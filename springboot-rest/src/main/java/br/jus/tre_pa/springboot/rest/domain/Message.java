@@ -1,11 +1,15 @@
 package br.jus.tre_pa.springboot.rest.domain;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.mysql.jdbc.Blob;
 
 @Entity
 @Table(name = "message")
@@ -22,6 +26,9 @@ public class Message {
 
 	@Column(unique=true)
 	private String message;
+	
+	@Column
+	private Byte arquivo;
 	
 	@Column
 	private String escritor;
