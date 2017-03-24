@@ -1,15 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
+import { EditarPage } from "../edit/editar";
+import { ListaPage } from "../list/lista";
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-
-  constructor(public navCtrl: NavController) {
-
+ @ViewChild('myNav') navCtrl: NavController;
+  constructor() {}
+   
+   editPage(){
+    this.navCtrl.push(EditarPage);
+  }
+  listPage(){
+    this.navCtrl.push(ListaPage);
   }
 
 }

@@ -1,17 +1,14 @@
-import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Component, ViewChild, OnInit } from '@angular/core';
+import { Platform, NavController } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
-import { TabsPage } from "../pessoa/pages/tabs/tabs";
-
-
-
+import { HomePage } from "../pessoa/pages/home/home";
 
 @Component({
   templateUrl: 'app.html'
 })
-export class MyApp {
-  rootPage = TabsPage;
-
+export class MyApp implements OnInit{
+  rootPage = HomePage;
+  @ViewChild('myNav') navCtrl: NavController
   constructor(platform: Platform) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -19,5 +16,9 @@ export class MyApp {
       StatusBar.styleDefault();
       Splashscreen.hide();
     });
+  }
+
+  ngOnInit(){
+    this.navCtrl.push(HomePage);
   }
 }

@@ -4,7 +4,6 @@ import { MyApp } from './app.component';
 import { EditarPage } from "../pessoa/pages/edit/editar";
 import { ListaPage } from "../pessoa/pages/list/lista";
 import { HomePage } from "../pessoa/pages/home/home";
-import { TabsPage } from "../pessoa/pages/tabs/tabs";
 import { PessoaService } from "../services/pessoaService";
 
 
@@ -13,8 +12,7 @@ import { PessoaService } from "../services/pessoaService";
     MyApp,
     EditarPage,
     ListaPage,
-    HomePage,
-    TabsPage
+    HomePage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -24,8 +22,7 @@ import { PessoaService } from "../services/pessoaService";
     MyApp,
     EditarPage,
     ListaPage,
-    HomePage,
-    TabsPage
+    HomePage
   ],
   providers: [ PessoaService, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

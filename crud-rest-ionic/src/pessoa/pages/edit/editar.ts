@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-
-import { NavController } from 'ionic-angular';
 import { Pessoa } from "../../../domain/pessoa";
 import { PessoaService } from "../../../services/pessoaService";
 import { NgForm } from "@angular/forms";
@@ -15,7 +13,7 @@ export class EditarPage {
   
   private pessoa: Pessoa = new Pessoa();
 
-  constructor(public navCtrl: NavController, private pessoaService: PessoaService) {
+  constructor(private pessoaService: PessoaService) {
 
   }
 
