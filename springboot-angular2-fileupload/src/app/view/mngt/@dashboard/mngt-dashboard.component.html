@@ -1,0 +1,30 @@
+<form #messageForm="ngForm" (ngSubmit)="save(messageForm)">
+    <md-input-container flex >
+        <input mdInput placeholder="Escritor:" [(ngModel)]="message.escritor" name="escritor"/>
+    </md-input-container>
+    <md-input-container flex >
+        <input mdInput placeholder="Messagem:" [(ngModel)]="message.message" name="message"> 
+    </md-input-container>
+    <md-input-container  tdFileDrop flex 
+                    [disabled]="disabled"
+                    (fileDrop)="message.files = $event"
+                    (click)="message.fileInput.inputElement.click()"
+                    (keyup.enter)="message.fileInput.inputElement.click()"
+                    (keyup.delete)="message.fileInput.clear()"
+                    (keyup.backspace)="message.fileInput.clear()">
+        <input mdInput
+              placeholder="select or drop files"
+            readonly [(ngModel)]="message.arquivo" name="arquivo"
+            [value]="message.files?.length ? (message.files?.length + ' message.files') : message.files?.name"/>
+    </md-input-container>
+    <button md-icon-button *ngIf="message.files" (click)="message.fileInput.clear()" (keyup.enter)="message.fileInput.clear()" >
+        <md-icon>cancel</md-icon>
+    </button>
+        <td-file-input class="push-left-sm push-right-sm" #fileInput [(ngModel)]="message.files" multiple [disabled]="disabled" name="files">
+            <md-icon>folder</md-icon>
+            <span class="text-upper">Browse...</span>
+        </td-file-input>
+    <span>
+        <button md-raised-button color="accent" class="text-upper" >Submit</button>
+    </span>
+</form>
