@@ -30,7 +30,9 @@ public class MessageRest {
 	public ResponseEntity<?> findAll(Pageable pageable) {
 		log.debug("[findAll] Requisição para buscar todos messages");
 		Page<Message> messages = messageService.findAll(pageable);
-		return ResponseEntity.ok(messages);
+		log.debug("========="+messages);
+		return ResponseEntity.ok().body(messages);
+		
 	}
 
 

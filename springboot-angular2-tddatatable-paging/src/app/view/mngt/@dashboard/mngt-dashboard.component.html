@@ -1,16 +1,14 @@
 <table>
-    
-        <td-data-table
-  [data]="messages"
+<td-data-table
+  [data]="pagingBar.content"
   [columns]="columns"
   [sortable]="true"
   [sortBy]="sortBy"
-  [sortOrder]="sortOrder"
-  (sortChange)="sort($event)">
+  [sortOrder]="sortOrder">
 </td-data-table>
-<td-paging-bar #pagingBar [pageSizes]="[20]" [total]="filteredTotal" (change)="page($event)">
+<td-paging-bar [pageSizes]="[5]" [total]="pagingBar.totalElements" (change)="page($event)">
   <span td-paging-bar-label hide-xs>Row per page:</span>
-  {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
+  {{pagingBar.number}} <span hide-xs>of {{pagingBar.totalPages}}</span>
 </td-paging-bar>
     
 </table>

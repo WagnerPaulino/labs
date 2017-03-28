@@ -28,7 +28,7 @@ public class Message {
 	private String message;
 	
 	@Column
-	private Byte arquivo;
+	private byte[] arquivo;
 	
 	@Column
 	private String escritor;

@@ -15,8 +15,8 @@ export class MessageService{
 
     constructor(private http: Http) { }
 
-    getMessages(){
-      return this.http.get(this.url)
+    getMessages(page){
+      return this.http.get(`${this.url}/?page=${page}&size=5`)
         .map(res => res.json())
     }
 }
