@@ -10,13 +10,18 @@ import { ListaPage } from "../list/lista";
 })
 export class HomePage {
  @ViewChild('myNav') navCtrl: NavController;
-  constructor() {}
+
+  constructor(public nav : NavController) {}
    
    editPage(){
-    this.navCtrl.push('page-edit');
+    //this.viewCtrl.dismiss();
+    //this.appCtrl.getRootNav().push(EditarPage);
+    this.nav.push(EditarPage);
   }
   listPage(){
-    this.navCtrl.push('page-contact');
+    //this.viewCtrl.dismiss();
+    //this.appCtrl.getRootNav().push(ListaPage);
+    this.nav.push(ListaPage);
   }
 
 }
