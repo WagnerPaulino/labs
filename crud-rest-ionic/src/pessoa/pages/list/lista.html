@@ -6,7 +6,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content #page-contact>
   <ion-list *ngFor="let pessoas of pessoas" (focus)="updateList()">
     <button> Nome: {{pessoas.nome}} Tipo: {{pessoas.tipo}}</button>
   </ion-list>

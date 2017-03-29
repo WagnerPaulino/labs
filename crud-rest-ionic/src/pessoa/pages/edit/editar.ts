@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Pessoa } from "../../../domain/pessoa";
 import { PessoaService } from "../../../services/pessoaService";
 import { NgForm } from "@angular/forms";
+import { NavController } from "ionic-angular";
 
 @Component({
-  selector: 'page-about',
+  selector: 'page-edit',
   templateUrl: 'editar.html'
 })
 export class EditarPage {
+  @ViewChild('page-edit') navCtrl: NavController
 
   
   

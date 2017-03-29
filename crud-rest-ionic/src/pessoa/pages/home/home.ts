@@ -13,10 +13,10 @@ export class HomePage {
   constructor() {}
    
    editPage(){
-    this.navCtrl.push(EditarPage);
+    this.navCtrl.push('page-edit');
   }
   listPage(){
-    this.navCtrl.push(ListaPage);
+    this.navCtrl.push('page-contact');
   }
 
 }

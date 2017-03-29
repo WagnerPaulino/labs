@@ -25,6 +25,7 @@ export class PessoaListComponent implements OnInit, OnDestroy{
       .subscribe(data => this.pessoas = data);
   }
   delete(id) {
+      console.log(this.pessoas);
     console.log("Executando delete",id);
     this.pessoaService.deletePessoa(id).subscribe(id => id);
     for(let i in this.pessoas){
