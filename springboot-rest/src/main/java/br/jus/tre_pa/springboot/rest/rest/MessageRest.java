@@ -1,5 +1,7 @@
 package br.jus.tre_pa.springboot.rest.rest;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -34,6 +36,13 @@ public class MessageRest {
 		return ResponseEntity.ok().body(messages);
 		
 	}
+	
+	@RequestMapping(method = RequestMethod.GET, path = "/api/messages/{messagem}")
+	public ResponseEntity<?> findByMessage(@PathVariable("messagem") String messagem){
+		List<Message> messages = messageService.findByMessage(messagem);
+		return ResponseEntity.ok().body(messages);
+	}
+	
 
 
 	/**

@@ -86,5 +86,10 @@ public class MessageService {
 		message.setEscritor(newMessage.getEscritor());
 		message.setMessage(newMessage.getMessage());
 	}
+	
+	public List<Message> findByMessage(String messagem){
+		List<Message> messages = messageRepository.findByMessage(messagem);
+		return messages;
+	}
 
 }
