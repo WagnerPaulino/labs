@@ -87,8 +87,8 @@ public class MessageService {
 		message.setMessage(newMessage.getMessage());
 	}
 	
-	public List<Message> findByMessage(String messagem){
-		List<Message> messages = messageRepository.findByMessage(messagem);
+	public Page<Message> findByMessage(String messagem, Pageable pageable){
+		Page<Message> messages = messageRepository.findByMessage(messagem, pageable);
 		return messages;
 	}
 
