@@ -9,7 +9,6 @@ import { EditarPage } from "../edit/editar";
   templateUrl: 'lista.html'
 })
 export class ListaPage {
-  @ViewChild('page-contact') navCtrl: NavController
   private pessoas : Pessoa[] = [];
 
   constructor(public pessoaService: PessoaService, public nav : NavController) {
@@ -19,5 +18,11 @@ export class ListaPage {
     this.nav.push(EditarPage, {pessoa})
   }
 
+  delete(id){
+    console.log(id)
+  this.pessoaService.deletePessoa(id).subscribe(id);
+  this.nav.pop();
+  this.nav.push(ListaPage);
+  }
 
 }
