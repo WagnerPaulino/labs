@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Pessoa } from "../../../domain/pessoa";
 import { PessoaService } from "../../../services/pessoaService";
 import { NgForm } from "@angular/forms";
-import { NavController } from "ionic-angular";
+import { NavController, NavParams } from "ionic-angular";
 
 @Component({
   selector: 'page-edit',
@@ -15,8 +15,10 @@ export class EditarPage {
   
   private pessoa: Pessoa = new Pessoa();
 
-  constructor(private pessoaService: PessoaService) {
-
+  constructor(private pessoaService: PessoaService, private navParams: NavParams) {
+    if(navParams.get('pessoa')){
+    this.pessoa = navParams.get('pessoa');
+    }
   }
 
   save(form: NgForm){
@@ -31,6 +33,10 @@ export class EditarPage {
   console.log(form.value);
     console.log(this.pessoa);
     this.pessoa = new Pessoa();
+}
+
+delete(id){
+  this.pessoaService.deletePessoa(id).subscribe(id);
 }
 
 }

@@ -8,6 +8,6 @@
 
 <ion-content>
   <ion-list *ngFor="let pessoas of pessoas" (focus)="updateList()">
-    <button ion-button> Nome: {{pessoas.nome}} <br/> Tipo: {{pessoas.tipo}}</button>
+    <button ion-button (click)="edit(pessoas)"> Nome: {{pessoas.nome}} <br/> Tipo: {{pessoas.tipo}}</button>
   </ion-list>
 </ion-content>
