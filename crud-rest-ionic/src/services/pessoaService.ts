@@ -49,12 +49,10 @@ export class PessoaService {
         .catch((error:any)=> Observable.throw(error.json().error || 'Server error'));
     }
 
-    deletePessoa(id): Observable<Pessoa>{
+    deletePessoa(id){
       let headers = new Headers({ 'Content-Type': 'application/json' });
       let options = new RequestOptions({ headers: headers });
-      return this.http.delete(this.getPessoaUrl(id), options)
-        .map(res => res.json())
-        .catch((error:any)=> Observable.throw(error.json().error || 'Server error'));
+      return this.http.delete(this.getPessoaUrl(id)).toPromise().then(res => res.json());
     }
 
     private getPessoaUrl(id){

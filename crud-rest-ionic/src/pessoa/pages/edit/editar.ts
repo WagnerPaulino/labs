@@ -34,9 +34,4 @@ export class EditarPage {
     console.log(this.pessoa);
     this.pessoa = new Pessoa();
 }
-
-delete(id){
-  this.pessoaService.deletePessoa(id).subscribe(id);
-}
-
 }

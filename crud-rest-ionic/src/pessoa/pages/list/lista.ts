@@ -18,11 +18,15 @@ export class ListaPage {
     this.nav.push(EditarPage, {pessoa})
   }
 
-  delete(id){
+  delete(pessoa: Pessoa){
+    let id: any = pessoa.id;
     console.log(id)
-  this.pessoaService.deletePessoa(id).subscribe(id);
-  this.nav.pop();
-  this.nav.push(ListaPage);
+  this.pessoaService.deletePessoa(id).then(id);
+   for(let i in this.pessoas){
+      if(this.pessoas[i].id == id){
+        this.pessoas.splice(parseInt(i), 1);
+      }
+}
   }
 
 }
