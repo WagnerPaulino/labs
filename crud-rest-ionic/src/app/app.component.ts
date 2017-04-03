@@ -19,6 +19,6 @@ export class MyApp implements OnInit{
   }
 
   ngOnInit(){
-    this.navCtrl.push(HomePage);
+   //this.navCtrl.push(HomePage);
   }
 }

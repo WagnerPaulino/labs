@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { Pessoa } from "../../../domain/pessoa";
 import { PessoaService } from "../../../services/pessoaService";
 import { NavController } from "ionic-angular";
@@ -21,7 +21,7 @@ export class ListaPage {
   delete(pessoa: Pessoa){
     let id: any = pessoa.id;
     console.log(id)
-  this.pessoaService.deletePessoa(id).then(id);
+    this.pessoaService.deletePessoa(id);
    for(let i in this.pessoas){
       if(this.pessoas[i].id == id){
         this.pessoas.splice(parseInt(i), 1);

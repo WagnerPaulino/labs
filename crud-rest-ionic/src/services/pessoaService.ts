@@ -50,9 +50,7 @@ export class PessoaService {
     }
 
     deletePessoa(id){
-      let headers = new Headers({ 'Content-Type': 'application/json' });
-      let options = new RequestOptions({ headers: headers });
-      return this.http.delete(this.getPessoaUrl(id)).toPromise().then(res => res.json());
+      return this.http.delete(this.getPessoaUrl(id)).toPromise().then(res => console.log(res));
     }
 
     private getPessoaUrl(id){
