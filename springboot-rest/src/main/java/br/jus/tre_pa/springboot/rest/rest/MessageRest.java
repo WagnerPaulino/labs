@@ -37,9 +37,9 @@ public class MessageRest {
 		
 	}
 	
-	@RequestMapping(method = RequestMethod.GET, path = "/api/messages/find/{messagem}")
-	public ResponseEntity<?> findByMessage(@PathVariable("messagem") String messagem, Pageable pageable){
-		Page<Message> messages = messageService.findByMessage(messagem, pageable);
+	@RequestMapping(method = RequestMethod.GET, path = "/api/messages/find/{message}")
+	public ResponseEntity<?> findByMessage(@PathVariable("message") String message, Pageable pageable){
+		Page<Message> messages = messageService.findByMessage(message, pageable);
 		return ResponseEntity.ok().body(messages);
 	}
 	
