@@ -5,6 +5,7 @@ import { MessageService } from "../../../service/message.service";
 import { Message } from "../../../domain/message";
 import { Page } from "../../../domain/page";
 import { Observable } from 'rxjs/Rx';
+import {Subject} from 'rxjs/Subject';
 
 @Component({
   selector: 'mngt-dashboard',
@@ -17,7 +18,6 @@ export class MngtDashboardComponent implements OnInit {
 
   constructor(private _dataTableService: TdDataTableService, public messageService: MessageService) {
      this.messageService.getMessages(0).subscribe(data => this.pagingBar = data);
-    
   }
 
   columns: ITdDataTableColumn[] = [
@@ -32,19 +32,20 @@ export class MngtDashboardComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.filter();
+    //this.filter();
+     console.log(this.pagingBar);
   }
 
   page(pagingEvent: IPageChangeEvent): void {
-    this.pagingBar = this.searchTerm;
+    this.messageService.getMessages(pagingEvent.page).subscribe(data => this.pagingBar = data);
   }
 
-  search(searchTerm: any): void {
-    this.searchTerm = searchTerm;
-    this.messageService.findByMessage(this.searchTerm).subscribe(data => console.log(data));
-    console.log(searchTerm, this.searchTerm);
+  search(searchTerm: string): void {
+   
   }
   filter(): void {
-    this.pagingBar = this.searchTerm;
+    let newData = this.messageService.findByMessage(this.searchTerm).map(data => newData = data);
+    newData = this._dataTableService.filterData(newData, this.searchTerm, true);
+    this.pagingBar = newData;
   }
 }

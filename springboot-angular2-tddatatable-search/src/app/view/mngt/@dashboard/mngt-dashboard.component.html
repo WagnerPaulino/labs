@@ -1,6 +1,7 @@
+<table>
 <div layout="row" layout-align="start center" class="pad-left-sm pad-right-sm">
   <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
-    <span class="md-title">Titulo</span>
+    <span class="md-title">Title here</span>
   </span>
   <span *ngIf="!searchBox.searchVisible" class="push-left-sm">
   </span>
@@ -8,14 +9,17 @@
   </td-search-box>
 </div>
 <md-divider></md-divider>
-<table>
 <td-data-table
+  
   [data]="pagingBar.content"
-  [columns]="columns">
+  [columns]="columns"
+  [sortable]="true"
+  [sortBy]="sortBy"
+  [sortOrder]="sortOrder"
+  (sortChange)="sort($event)">
 </td-data-table>
 <td-paging-bar [pageSizes]="[5]" [total]="pagingBar.totalElements" (change)="page($event)">
   <span td-paging-bar-label hide-xs>Row per page:</span>
   {{pagingBar.number}} <span hide-xs>of {{pagingBar.totalPages}}</span>
 </td-paging-bar>
-    
 </table>
