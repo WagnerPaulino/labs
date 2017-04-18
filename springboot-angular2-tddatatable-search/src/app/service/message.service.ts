@@ -17,10 +17,10 @@ export class MessageService{
 
     getMessages(page){
       return this.http.get(`${this.url}/?page=${page}&size=5`)
-        .map(res => res.json())
+        .map(res => res.json());
     }
-    findByMessage(message:string, page?: any): Observable<Message>{
+    findByMessage(message:string, page?: any){
       //let bodyString = JSON.stringify(message);
-      return this.http.get(`${this.url}/find/${message}/?page=${page|5}&size=5`).map(res => res.json());
+      return this.http.get(`${this.url}/find/${message}/?page=${page|0}&size=5`).map(res => res.json());
     }
 }

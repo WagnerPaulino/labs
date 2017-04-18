@@ -17,7 +17,7 @@ export class MngtDashboardComponent implements OnInit {
   private pagingBar : Page<Message> = new Page<Message>();
 
   constructor(private _dataTableService: TdDataTableService, public messageService: MessageService) {
-     this.messageService.getMessages(0).subscribe(data => this.pagingBar = data);
+    this.messageService.getMessages(0).subscribe(data => this.pagingBar = data);
   }
 
   columns: ITdDataTableColumn[] = [
@@ -32,20 +32,18 @@ export class MngtDashboardComponent implements OnInit {
 
 
   ngOnInit(): void {
-    //this.filter();
-     console.log(this.pagingBar);
+   // this.filter();
   }
 
   page(pagingEvent: IPageChangeEvent): void {
     this.messageService.getMessages(pagingEvent.page).subscribe(data => this.pagingBar = data);
   }
 
-  search(searchTerm: string): void {
-   
+  search(searchTerm: any): void {
+    let newDate: any = '';
+    this.messageService.findByMessage(searchTerm).subscribe(data => this.pagingBar = data);
   }
   filter(): void {
-    let newData = this.messageService.findByMessage(this.searchTerm).map(data => newData = data);
-    newData = this._dataTableService.filterData(newData, this.searchTerm, true);
-    this.pagingBar = newData;
+    this.messageService.getMessages(0).subscribe(data => this.pagingBar = data);
   }
 }
