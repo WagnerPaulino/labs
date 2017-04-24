@@ -40,8 +40,11 @@ export class MngtDashboardComponent implements OnInit {
   }
 
   search(searchTerm: any): void {
-    let newDate: any = '';
-    this.messageService.findByMessage(searchTerm).subscribe(data => this.pagingBar = data);
+    if(searchTerm == ''){
+      this.messageService.getMessages(0).subscribe(data => this.pagingBar = data);
+    }else{
+      this.messageService.findByMessage(searchTerm).subscribe(data => this.pagingBar = data);
+    }
   }
   filter(): void {
     this.messageService.getMessages(0).subscribe(data => this.pagingBar = data);
