@@ -40,7 +40,7 @@ export class MngtDashboardComponent implements OnInit {
   }
 
   search(searchTerm: any): void {
-    if(searchTerm == ''){
+    if(searchTerm == '' || searchTerm == null){
       this.messageService.getMessages(0).subscribe(data => this.pagingBar = data);
     }else{
       this.messageService.findByMessage(searchTerm).subscribe(data => this.pagingBar = data);
