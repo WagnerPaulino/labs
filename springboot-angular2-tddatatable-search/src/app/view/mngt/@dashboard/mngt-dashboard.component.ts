@@ -26,27 +26,29 @@ export class MngtDashboardComponent implements OnInit {
   ];
 
   searchTerm: any = '';
-  fromRow: number = 20;
+  /*fromRow: number = 20;
   currentPage: number = 0;
-  pageSize: number = 1;
+  pageSize: number = 0;*/
 
 
   ngOnInit(): void {
-   // this.filter();
   }
 
   page(pagingEvent: IPageChangeEvent): void {
-    this.messageService.getMessages(pagingEvent.page).subscribe(data => this.pagingBar = data);
+    if(this.searchTerm == '' || this.searchTerm == null || !this.searchTerm){
+      this.messageService.getMessages(pagingEvent.page).subscribe(data => this.pagingBar = data);
+    }else{
+      this.messageService.findByMessage(this.searchTerm, pagingEvent.page).subscribe(data => this.pagingBar = data);
+    }
+    
   }
 
   search(searchTerm: any): void {
+    this.searchTerm = searchTerm;
     if(searchTerm == '' || searchTerm == null){
       this.messageService.getMessages(0).subscribe(data => this.pagingBar = data);
     }else{
       this.messageService.findByMessage(searchTerm).subscribe(data => this.pagingBar = data);
     }
-  }
-  filter(): void {
-    this.messageService.getMessages(0).subscribe(data => this.pagingBar = data);
   }
 }
