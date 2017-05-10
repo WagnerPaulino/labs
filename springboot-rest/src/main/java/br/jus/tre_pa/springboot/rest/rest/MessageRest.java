@@ -1,7 +1,5 @@
 package br.jus.tre_pa.springboot.rest.rest;
 
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -12,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import br.jus.tre_pa.springboot.rest.domain.Message;
 import br.jus.tre_pa.springboot.rest.service.MessageService;
@@ -32,22 +32,20 @@ public class MessageRest {
 	public ResponseEntity<?> findAll(Pageable pageable) {
 		log.debug("[findAll] Requisição para buscar todos messages");
 		Page<Message> messages = messageService.findAll(pageable);
-		log.debug("========="+messages);
+		log.debug("=========" + messages);
 		return ResponseEntity.ok().body(messages);
-		
+
 	}
-	
+
 	@RequestMapping(method = RequestMethod.GET, path = "/api/messages/find/{message}")
-	public ResponseEntity<?> findByMessage(@PathVariable("message") String message, Pageable pageable){
+	public ResponseEntity<?> findByMessage(@PathVariable("message") String message, Pageable pageable) {
 		Page<Message> messages = messageService.findByMessage(message, pageable);
 		return ResponseEntity.ok().body(messages);
 	}
-	
-
 
 	/**
 	 * Endpoint para buscar 1 (uma) instância de Message.
-	 *
+	 * 
 	 */
 	@RequestMapping(method = RequestMethod.GET, path = "/api/messages/{id}")
 	public ResponseEntity<?> find(@PathVariable("id") Long id) {
@@ -107,6 +105,11 @@ public class MessageRest {
 		}
 		log.debug("[update] message NÃO encontrado.");
 		return ResponseEntity.notFound().build();
+	}
+	@RequestMapping(value="/method9")
+	@ResponseBody
+	public String method9(@RequestParam("id") int id){
+		return "method9 with id= "+id;
 	}
 
 }

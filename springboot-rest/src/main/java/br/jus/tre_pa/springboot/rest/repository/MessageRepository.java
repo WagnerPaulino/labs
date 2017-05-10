@@ -1,6 +1,5 @@
 package br.jus.tre_pa.springboot.rest.repository;
 
-import java.util.List;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -14,7 +13,7 @@ import br.jus.tre_pa.springboot.rest.domain.Message;
 @Repository
 public interface MessageRepository extends JpaRepository<Message, Long> {
 	
-	@Query("select m from Message m where m.message like %?1%")
-	public Page<Message> findByMessage(String message, Pageable page);
+	@Query("select m from Message m where m.message like %:message%")
+	public Page<Message> findByMessage(@Param("message") String message, Pageable page);
 	
 }

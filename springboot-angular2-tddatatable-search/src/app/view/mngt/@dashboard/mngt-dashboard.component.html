@@ -18,7 +18,7 @@
   [sortOrder]="sortOrder"
   (sortChange)="sort($event)">
 </td-data-table>
-<td-paging-bar [pageSizes]="[5]" [total]="pagingBar.totalElements" (change)="page($event)">
+<td-paging-bar [pageSizes]="[5]" [total]="pagingBar.totalPages" (change)="page($event)">
   <span td-paging-bar-label hide-xs>Row per page:</span>
   {{pagingBar.number}} <span hide-xs>of {{pagingBar.totalPages}}</span>
 </td-paging-bar>

@@ -6,6 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import br.jus.tre_pa.springboot.rest.domain.Message;
+import br.jus.tre_pa.springboot.rest.exceptions.ErroInfo;
 import br.jus.tre_pa.springboot.rest.repository.MessageRepository;
 import java.util.List;
 
@@ -90,6 +91,7 @@ public class MessageService {
 	public Page<Message> findByMessage(String message, Pageable pageable){
 		Page<Message> messages = messageRepository.findByMessage(message, pageable);
 		return messages;
+		
 	}
 
 }
