@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
 import { EditarPage } from "../edit/editar";
@@ -9,7 +9,6 @@ import { ListaPage } from "../list/lista";
   templateUrl: 'home.html'
 })
 export class HomePage {
- @ViewChild('myNav') navCtrl: NavController;
 
   constructor(public nav : NavController) {}
    
