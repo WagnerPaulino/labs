@@ -21,6 +21,6 @@ export class MessageService{
     }
     findByMessage(message:string, page?: any){
       //let bodyString = JSON.stringify(message);
-      return this.http.get(`${this.url}/find/${message}/?page=${page|0}&size=5`).map(res => res.json());
+      return this.http.get(`${this.url}/find/${message}/?page=${page}&size=5`).map(res => res.json());
     }
 }

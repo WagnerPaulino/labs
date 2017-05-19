@@ -35,10 +35,11 @@ export class MngtDashboardComponent implements OnInit {
   }
 
   page(pagingEvent: IPageChangeEvent): void {
+
     if(this.searchTerm == '' || this.searchTerm == null || !this.searchTerm){
-      this.messageService.getMessages(pagingEvent.page).subscribe(data => this.pagingBar = data);
+      this.messageService.getMessages(pagingEvent.page-1).subscribe(data => this.pagingBar = data);
     }else{
-      this.messageService.findByMessage(this.searchTerm, pagingEvent.page).subscribe(data => this.pagingBar = data);
+      this.messageService.findByMessage(this.searchTerm, pagingEvent.page-1).subscribe(data => this.pagingBar = data);
     }
     
   }
