@@ -15,12 +15,12 @@ export class MessageService{
 
     constructor(private http: Http) { }
 
-    getMessages(page){
-      return this.http.get(`${this.url}/?page=${page}&size=5`)
+    getMessages(page: any, size?: any){
+      return this.http.get(`${this.url}/?page=${page}&size=${size}`)
         .map(res => res.json());
     }
-    findByMessage(message:string, page?: any){
+    findByMessage(message:string, page?: any, size?: any){
       //let bodyString = JSON.stringify(message);
-      return this.http.get(`${this.url}/find/${message}/?page=${page}&size=5`).map(res => res.json());
+      return this.http.get(`${this.url}/find/${message}/?page=${page}&size=${size}`).map(res => res.json());
     }
 }

@@ -27,19 +27,19 @@ export class MngtDashboardComponent implements OnInit {
 
   searchTerm: any = '';
   /*fromRow: number = 20;
-  currentPage: number = 0;
-  pageSize: number = 0;*/
+  currentPage: number = 0;*/
+  pageSize: any = 5;
 
 
   ngOnInit(): void {
   }
 
   page(pagingEvent: IPageChangeEvent): void {
-
+    this.pageSize = pagingEvent.pageSize;
     if(this.searchTerm == '' || this.searchTerm == null || !this.searchTerm){
-      this.messageService.getMessages(pagingEvent.page-1).subscribe(data => this.pagingBar = data);
+      this.messageService.getMessages(pagingEvent.page-1, pagingEvent.pageSize).subscribe(data => this.pagingBar = data);
     }else{
-      this.messageService.findByMessage(this.searchTerm, pagingEvent.page-1).subscribe(data => this.pagingBar = data);
+      this.messageService.findByMessage(this.searchTerm, pagingEvent.page-1, pagingEvent.pageSize).subscribe(data => this.pagingBar = data);
     }
     
   }
@@ -47,9 +47,9 @@ export class MngtDashboardComponent implements OnInit {
   search(searchTerm: any): void {
     this.searchTerm = searchTerm;
     if(searchTerm == '' || searchTerm == null){
-      this.messageService.getMessages(0).subscribe(data => this.pagingBar = data);
+      this.messageService.getMessages(0, this.pageSize).subscribe(data => this.pagingBar = data);
     }else{
-      this.messageService.findByMessage(searchTerm).subscribe(data => this.pagingBar = data);
+      this.messageService.findByMessage(searchTerm, 0, this.pageSize).subscribe(data => this.pagingBar = data);
     }
   }
 }
