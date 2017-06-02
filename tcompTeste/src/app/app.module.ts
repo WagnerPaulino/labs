@@ -12,6 +12,7 @@ import { CovalentNotificationsModule } from '@covalent/core';
 import { MdButtonModule, MdCheckboxModule } from '@angular/material';
 import {MaterialModule} from '@angular/material';
 import { CovalentSearchModule } from '@covalent/core';
+import { CovalentExpansionPanelModule } from '@covalent/core';
 
 import { AppComponent } from './app.component';
 import { BarraPrincipalComponent } from './buscador/barra-principal/barra-principal.component';
@@ -38,7 +39,8 @@ import { PaginaInicialComponent } from './buscador/pagina-inicial/pagina-inicial
     MdButtonModule,
     MdCheckboxModule,
     MaterialModule,
-    CovalentSearchModule
+    CovalentSearchModule,
+    CovalentExpansionPanelModule
   ],
   providers: [],
   bootstrap: [AppComponent]

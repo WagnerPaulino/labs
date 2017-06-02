@@ -11,4 +11,11 @@ export class PaginaInicialComponent implements OnInit {
 
   ngOnInit() {}
 
+  fadeDiv: boolean = false;
+  @ViewChild('searchBox') searchBox: string = ''
+
+  fade(): void {
+    this.fadeDiv = !this.fadeDiv;
+  }
+
 }
