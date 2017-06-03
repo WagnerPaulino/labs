@@ -1,30 +1,28 @@
 <md-tab-group md-stretch-tabs>
   <md-tab>
     <ng-template md-tab-label>
-      <div layout="row" layout-align="center center">
+      <div layout="row" layout-align="center center" (click)="mudou('web')">
         Web
       </div>
     </ng-template>
   </md-tab>
   <md-tab>
     <ng-template md-tab-label>
-      <div layout="row" layout-align="center center">
+      <div layout="row" layout-align="center center" (click)="mudou('imagem')">
           Imagens
-        <td-notification-count color="warn" [notifications]="0">
-        </td-notification-count>
       </div>
     </ng-template>
   </md-tab>
   <md-tab>
     <ng-template md-tab-label>
-      <div layout="row" layout-align="center center">
+      <div layout="row" layout-align="center center" (click)="mudou('video')">
           Videos
       </div>
     </ng-template>
   </md-tab>
   <md-tab>
     <ng-template md-tab-label>
-      <div layout="row" layout-align="center center">
+      <div layout="row" layout-align="center center" (click)="mudou('noticia')">
         Noticias 
       </div>
     </ng-template>

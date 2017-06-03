@@ -1,3 +1,4 @@
+<barra-principal (novoValor)="newValor($event)"></barra-principal>
 <div class="barra-procura">
 <md-toolbar>
   <span>Pesquise Aqui</span>
@@ -14,5 +15,6 @@
 </md-toolbar>
 </div>
 <span *ngIf="searchBox.value">
-  <h1>Estou pesquisando por: {{searchBox.value}}</h1>
+  <h1>Estou pesquisando por {{valorInicial}}: {{searchBox.value}}</h1>
 </span>
+<!--button (click)="fade()">Emitir</button-->

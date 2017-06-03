@@ -9,13 +9,18 @@ export class PaginaInicialComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    
+  }
+  valorInicial: any = 'web'
 
   fadeDiv: boolean = false;
   @ViewChild('searchBox') searchBox: string = ''
 
-  fade(): void {
-    this.fadeDiv = !this.fadeDiv;
+  newValor(event){
+    console.log(event.novoValor);
+    this.valorInicial = event.novoValor;
   }
+  
 
 }
