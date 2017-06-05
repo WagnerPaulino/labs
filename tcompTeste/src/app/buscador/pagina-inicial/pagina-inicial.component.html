@@ -15,5 +15,12 @@
 </md-toolbar>
 </div>
 <span *ngIf="searchBox.value">
-  <h1>Estou pesquisando por {{valorInicial}}: {{searchBox.value}}</h1>
+  <p>Estou pesquisando na {{valorInicial}}: {{searchBox.value}}</p>
+    <md-list-item *ngFor="let dados of date">
+      <md-card>
+        <button md-button class="button-cards">
+          <md-card-title>{{dados}}</md-card-title>
+        </button>
+      </md-card>
+    </md-list-item>
 </span>

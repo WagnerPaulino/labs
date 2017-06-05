@@ -14,6 +14,11 @@ export class PaginaInicialComponent implements OnInit {
   }
   valorInicial: any = 'web'
 
+
+  date: any[] = ["teste1","teste2","teste"]
+
+
+
   fadeDiv: boolean = false;
   @ViewChild('searchBox') searchBox: string = ''
 
