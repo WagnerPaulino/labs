@@ -1,7 +1,7 @@
 <barra-principal (novoValor)="newValor($event)"></barra-principal>
-<div class="barra-procura">
-<md-toolbar>
-  <span>Pesquise Aqui</span>
+<md-toolbar [ngClass]="{
+      'barra-procura': !searchBox.value
+      }">
   <td-search-box placeholder="Search"[alwaysVisible]="false" [showUnderline]="true" flex #searchBox></td-search-box>
   <button md-icon-button [mdMenuTriggerFor]="toolbarMenu1"><md-icon>more_vert</md-icon></button>
   <md-menu #toolbarMenu1="mdMenu">
@@ -13,7 +13,6 @@
     </button>
   </md-menu>
 </md-toolbar>
-</div>
 <span *ngIf="searchBox.value">
   <p>Estou pesquisando na {{valorInicial}}: {{searchBox.value}}</p>
     <md-list-item *ngFor="let dados of date">
