@@ -8,3 +8,12 @@
     margin-top: 20%;
     background-color: lightblue;
 }
+.nome{
+    font-family: tahoma, sans-serif;
+    font-size: 160%;
+    color: #2677d3;
+    text-align: center;
+    position: relative;
+    display: block;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}

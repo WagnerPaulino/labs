@@ -14,9 +14,11 @@ import {MaterialModule} from '@angular/material';
 import { CovalentSearchModule } from '@covalent/core';
 import { CovalentExpansionPanelModule } from '@covalent/core';
 
+
 import { AppComponent } from "app/app.component";
 import { BarraPrincipalComponent } from "app/buscador/pagina-inicial/barra-principal/barra-principal.component";
 import { PaginaInicialComponent } from "app/buscador/pagina-inicial/pagina-inicial.component";
+import { SharedModule } from "app/shared/shared.module";
 
 
 
@@ -28,21 +30,11 @@ import { PaginaInicialComponent } from "app/buscador/pagina-inicial/pagina-inici
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule,
-    CovalentLayoutModule,
-    CovalentStepsModule,
+    BrowserAnimationsModule,
+    SharedModule,
     CovalentHttpModule.forRoot(),
     CovalentHighlightModule,
-    CovalentMarkdownModule,
-    CovalentDynamicFormsModule,
-    BrowserAnimationsModule,
-    CovalentNotificationsModule,
-    MdButtonModule,
-    MdCheckboxModule,
-    MaterialModule,
-    CovalentSearchModule,
-    CovalentExpansionPanelModule
+    CovalentMarkdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]

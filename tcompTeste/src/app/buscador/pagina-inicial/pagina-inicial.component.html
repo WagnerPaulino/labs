@@ -2,6 +2,7 @@
 <md-toolbar [ngClass]="{
       'barra-procura': !searchBox.value
       }">
+  <h2 class="nome">AWSearch</h2>
   <td-search-box placeholder="Pesquisar"[alwaysVisible]="true" [showUnderline]="true" flex #searchBox></td-search-box>
   <button md-icon-button [mdMenuTriggerFor]="toolbarMenu1"><md-icon>more_vert</md-icon></button>
   <md-menu #toolbarMenu1="mdMenu">
