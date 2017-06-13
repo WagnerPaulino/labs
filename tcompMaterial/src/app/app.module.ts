@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import 'hammerjs';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MdButtonModule, MdCheckboxModule} from '@angular/material';
+import { MaterialModule } from '@angular/material';
 
 
 import { AppComponent } from './app.component';
@@ -23,7 +24,8 @@ import { AppComponent } from './app.component';
     MdButtonModule, 
     MdCheckboxModule,
     MdButtonModule, 
-    MdCheckboxModule
+    MdCheckboxModule,
+    MaterialModule
   ],
   exports: [MdButtonModule, MdCheckboxModule],
   providers: [],
