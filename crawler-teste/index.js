@@ -2,12 +2,12 @@
 var request = require('request');
 var cheerio = require('cheerio');
 
-var urlReq = 'https://busca.uol.com.br/result.html?term=ola';
+var urlReq = 'http://www.google.com.br/search?gcx=c&ix=c1&sourceid=chrome&ie=UTF-8&q=teste';
 
 request(urlReq, function(error,response, body){
     var $ = cheerio.load(body);
-
-    console.log($('div[id=result]').html());
+//console.log(body)
+    console.log($('div.g').text());
 
 });
-'div#result', 'section.result-list', 'article.result-item'
+//'div#result', 'section.result-list', 'article.result-item'

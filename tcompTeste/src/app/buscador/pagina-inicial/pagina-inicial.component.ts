@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { BuscadorService } from "app/services/buscador/buscador.service";
 
 @Component({
   selector: 'pagina-inicial',
@@ -7,17 +8,21 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 export class PaginaInicialComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: BuscadorService) { }
 
   ngOnInit() {
     
   }
-  valorInicial: any = 'web'
+  valorInicial: any = 'web';
 
 
-  date: any[] = ["teste1","teste2","teste"]
+  date: any = '';
 
-
+getResultado(url: string){
+  console.log(url);
+  this.service.getResultados(url).subscribe(data => console.log(data));
+  
+}
 
   fadeDiv: boolean = false;
   @ViewChild('searchBox') searchBox: string = ''

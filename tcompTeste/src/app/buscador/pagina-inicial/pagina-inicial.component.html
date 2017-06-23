@@ -3,7 +3,7 @@
       'barra-procura': !searchBox.value
       }">
   <h2 class="nome">AWSearch</h2>
-  <td-search-box placeholder="Pesquisar"[alwaysVisible]="true" [showUnderline]="true" flex #searchBox></td-search-box>
+  <td-search-box placeholder="Pesquisar"[alwaysVisible]="true" [showUnderline]="true" (searchDebounce)="getResultado($event)" flex #searchBox></td-search-box>
   <button md-icon-button [mdMenuTriggerFor]="toolbarMenu1"><md-icon>more_vert</md-icon></button>
   <md-menu #toolbarMenu1="mdMenu">
     <button md-menu-item>
@@ -16,10 +16,10 @@
 </md-toolbar>
 <span *ngIf="searchBox.value">
   <p>Estou pesquisando na {{valorInicial}}: {{searchBox.value}}</p>
-    <md-list-item *ngFor="let dados of date">
+    <md-list-item>
       <md-card>
         <button md-button class="button-cards">
-          <md-card-title>{{dados}}</md-card-title>
+          <md-card-title>{{date.value}}</md-card-title>
         </button>
       </md-card>
     </md-list-item>

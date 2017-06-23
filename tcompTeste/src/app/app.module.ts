@@ -19,6 +19,7 @@ import { AppComponent } from "app/app.component";
 import { BarraPrincipalComponent } from "app/buscador/pagina-inicial/barra-principal/barra-principal.component";
 import { PaginaInicialComponent } from "app/buscador/pagina-inicial/pagina-inicial.component";
 import { SharedModule } from "app/shared/shared.module";
+import { BuscadorService } from "app/services/buscador/buscador.service";
 
 
 
@@ -36,7 +37,7 @@ import { SharedModule } from "app/shared/shared.module";
     CovalentHighlightModule,
     CovalentMarkdownModule
   ],
-  providers: [],
+  providers: [BuscadorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
