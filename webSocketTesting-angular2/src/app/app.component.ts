@@ -14,11 +14,11 @@ import { $WebSocket } from './service/$WebSocket.service';
 })
 export class AppComponent {
     title = 'app works!';
-
+    public data: any = '';
     constructor(public service: SocketService) {
        
     }
     public receber(){
-        this.service.connect("ws://10.13.29.31:8080/counter").subscribe(data => console.log(data));
+        this.service.connect("ws://10.13.29.31:8080/counter").subscribe(data => this.data = data);
     }
 }
