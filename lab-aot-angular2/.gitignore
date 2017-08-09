@@ -4,6 +4,7 @@
 /dist
 /tmp
 /aot
+/package-lock.json
 
 # dependencies
 /node_modules
