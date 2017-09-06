@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="testeJPA">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-		<class>com.testeJPA.testeJPA_lab.Message</class>
+		<class>com.testeJPA.testeJPA_lab.domain.Message</class>
 
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/jpa" />
