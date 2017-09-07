@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.testeJPA.testeJPA_lab.dao.MessageDAO;
 import com.testeJPA.testeJPA_lab.domain.Message;
-import com.testeJPA.testeJPA_lab.utils.Utils;
 
 public class MessageFacade {
 
