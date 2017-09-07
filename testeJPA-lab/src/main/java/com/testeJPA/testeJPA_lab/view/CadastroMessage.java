@@ -17,13 +17,13 @@ import com.testeJPA.testeJPA_lab.domain.Message;
 import com.testeJPA.testeJPA_lab.facade.MessageFacade;
 import com.testeJPA.testeJPA_lab.utils.Utils;
 
-public class CadastroMessage extends JFrame{
+public class CadastroMessage extends JFrame {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	private JFrame mainFrame;
 	JTextField jmessage = new JTextField();
 	// JTextField imagem = new JTextField();
@@ -83,7 +83,8 @@ public class CadastroMessage extends JFrame{
 				try {
 					Message message = new Message();
 					message = facade.findMessage(Long.valueOf(parametro.getText()));
-					ListarMessage listar = new ListarMessage(message);
+					ListarMessage listar = new ListarMessage();
+					listar.setMessage(message);
 					listar.setVisible(true);
 				} catch (Exception e2) {
 					e2.printStackTrace();
@@ -103,10 +104,8 @@ public class CadastroMessage extends JFrame{
 
 			}
 		});
-		
 
 		footerFrame.add(jprocurar);
-
 		mainFrame.setVisible(true);
 	}
 
@@ -124,14 +123,11 @@ public class CadastroMessage extends JFrame{
 		mainFrame.add(jmessage);
 
 		mainFrame.add(texto2);
-		
-		
+
 		mainFrame.add(selecionar);
 
 		footerFrame.add(texto3);
 		footerFrame.add(parametro);
-
-		mainFrame.setVisible(true);
 	}
 
 }

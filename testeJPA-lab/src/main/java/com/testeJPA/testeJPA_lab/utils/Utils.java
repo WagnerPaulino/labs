@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import javax.imageio.ImageIO;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 public class Utils {
@@ -28,9 +29,7 @@ public class Utils {
 		return bImageFromConvert;
 	}
 
-	@SuppressWarnings("unused")
-	public ImageIcon byteImg(byte[] i) {
-		InputStream is = new ByteArrayInputStream(i);
+	public Icon byteImg(byte[] i) {
 		Image image = new ImageIcon(i).getImage();
 		ImageIcon icon = new ImageIcon(image);
 		return icon;
