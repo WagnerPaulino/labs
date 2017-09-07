@@ -1,7 +1,10 @@
 package com.testeJPA.testeJPA_lab.facade;
 
+import java.util.List;
+
 import com.testeJPA.testeJPA_lab.dao.MessageDAO;
 import com.testeJPA.testeJPA_lab.domain.Message;
+import com.testeJPA.testeJPA_lab.utils.Utils;
 
 public class MessageFacade {
 
@@ -35,11 +38,11 @@ public class MessageFacade {
 		return message;
 	}
 
-	/*public List<Message> listAll() {
+	public List<Message> listAll() {
 		messageDAO.beginTransaction();
 		List<Message> result = messageDAO.findAll();
 		messageDAO.closeTransaction();
 
 		return result;
-	}*/
+	}
 }

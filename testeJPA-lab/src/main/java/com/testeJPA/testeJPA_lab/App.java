@@ -2,6 +2,7 @@ package com.testeJPA.testeJPA_lab;
 
 import com.testeJPA.testeJPA_lab.domain.Message;
 import com.testeJPA.testeJPA_lab.facade.MessageFacade;
+import com.testeJPA.testeJPA_lab.view.CadastroMessage;
 
 /**
  * Hello world!
@@ -9,13 +10,6 @@ import com.testeJPA.testeJPA_lab.facade.MessageFacade;
  */
 public class App {
 	public static void main(String[] args) {
-		try {
-			MessageFacade facade = new MessageFacade();
-			Message message1 = new Message();
-			message1.setMessage("olá mundo");
-			facade.createMessage(message1);
-		} catch (Exception e) {
-			System.out.println("Erro ao salvar: " + e);
-		}
+		CadastroMessage cadastro = new CadastroMessage();
 	}
 }
