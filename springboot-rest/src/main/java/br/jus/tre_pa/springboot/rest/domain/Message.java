@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
@@ -15,22 +16,23 @@ import com.mysql.jdbc.Blob;
 @Entity
 @Table(name = "message")
 public class Message {
-	
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-	@Column(unique=true)
+	@Column(unique = true)
 	private String message;
-	
-	@Column
+
+	@Lob
+	@Column(nullable = false, columnDefinition = "mediumblob")
 	private byte[] arquivo;
-	
+
 	@Column
 	private String escritor;
 
@@ -99,5 +101,5 @@ public class Message {
 	public String toString() {
 		return "Message [id=" + id + ", message=" + message + ", escritor=" + escritor + "]";
 	}
-	
+
 }
