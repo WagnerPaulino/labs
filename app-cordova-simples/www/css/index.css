@@ -117,4 +117,11 @@ h1 {
     width: 100%;
     background-color: skyblue;
     margin: 0 auto;
+    border: grey solid 1px;
+    border-radius: 7%;
+}
+.inputs{
+    width: 100%;
+    border: grey solid 1px;
+    border-radius: 7%;
 }

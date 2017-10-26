@@ -38,12 +38,26 @@
     <body>
         <div class="app">
             <div id="deviceready">
-                <div id="tela1" >
-                    <button class="btn" type="button" onclick="mudarHtml('tela1','tela2')">Entrar no App</button>
+                <div id="inicial" >
+                    <button class="btn" type="button" onclick="mudarHtml('inicial','dashboard')">Entrar no App</button>
                 </div>
-                <div id="tela2" style="display: none;">
-                    <button class="btn">Listar Cursos</button>
-                    <button class="btn">Adicionar Cursos</button>
+
+                <div id="dashboard" style="display: none;">
+                    <button class="btn" onclick="mudarHtml('dashboard','listarCurso')">Listar Cursos</button>
+                    <button class="btn" onclick="mudarHtml('dashboard','editarCurso')">Adicionar Cursos</button>
+                </div>
+
+                <div id="listarCurso" style="display: none;">
+
+                </div>
+
+                <div id="editarCurso" style="display: none;">
+                    <p>
+                        <input class="inputs" type="text" placeholder="Descrição">
+                    </p>
+                    <p>
+                        <input class="inputs" type="text" placeholder="Modalidade">
+                    </p>
                 </div>
             </div>
         </div>
